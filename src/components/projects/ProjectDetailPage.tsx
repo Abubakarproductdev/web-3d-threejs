@@ -173,6 +173,26 @@ export default function ProjectDetailPage({ projectId, onBack, onSelectProject }
           </div>
         </section>
 
+        {/* CORE DESIGN PRINCIPLES (IF AVAILABLE) */}
+        {project.principles && project.principles.length > 0 && (
+          <section className="project-principles-section">
+            <div className="section-header">
+              <span className="section-eyebrow">ARCHITECTURAL FOUNDATION</span>
+              <h2>Core Design Principles</h2>
+            </div>
+
+            <div className="principles-grid">
+              {project.principles.map((pr, idx) => (
+                <div key={pr.name} className="principle-card">
+                  <span className="principle-num">0{idx + 1}</span>
+                  <h4 className="principle-title">{pr.name}</h4>
+                  <p className="principle-desc">{pr.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* CORE CAPABILITIES / KEY FEATURES */}
         <section className="project-features-section">
           <div className="section-header">
@@ -190,6 +210,34 @@ export default function ProjectDetailPage({ projectId, onBack, onSelectProject }
             ))}
           </div>
         </section>
+
+        {/* FAULT TOLERANCE & RESILIENCE MATRIX (IF AVAILABLE) */}
+        {project.resilience && project.resilience.length > 0 && (
+          <section className="project-resilience-section">
+            <div className="section-header">
+              <span className="section-eyebrow">FAULT TOLERANCE</span>
+              <h2>Resilience & Fallback Architecture</h2>
+              <p className="section-summary">
+                Engineered failure handling ensuring uninterrupted user experience across mobile OS limitations, biometric edge cases, and network dropouts.
+              </p>
+            </div>
+
+            <div className="resilience-grid">
+              {project.resilience.map((item) => (
+                <div key={item.scenario} className="resilience-card">
+                  <div className="resilience-scenario">
+                    <span className="resilience-badge">FAILURE MODE</span>
+                    <h4>{item.scenario}</h4>
+                  </div>
+                  <div className="resilience-solution">
+                    <span className="resilience-badge solution">ARCHITECTURAL MITIGATION</span>
+                    <p>{item.solution}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* QUANTITATIVE METRICS */}
         <section className="project-metrics-section">

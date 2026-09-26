@@ -1323,10 +1323,90 @@ html[data-scene="orange"], body[data-scene="orange"], [data-scene="orange"] .sto
 }
 .footer-return-btn:hover { background: #f15a24; transform: translateY(-2px); }
 
+/* Principles Grid */
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+.principle-card {
+  background: #fffef8;
+  border: 1.5px solid #242520;
+  border-radius: 8px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.principle-num {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  font-weight: 700;
+  color: #f15a24;
+  letter-spacing: 1px;
+}
+.principle-title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #242520;
+  letter-spacing: -0.3px;
+  line-height: 1.1;
+}
+.principle-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #696b61;
+}
+
+/* Resilience Matrix */
+.resilience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 18px;
+}
+.resilience-card {
+  background: #fffef8;
+  border: 1.5px solid #242520;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.resilience-badge {
+  display: inline-block;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: rgba(36, 37, 32, 0.08);
+  color: #242520;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+.resilience-badge.solution {
+  background: rgba(241, 90, 36, 0.12);
+  color: #f15a24;
+}
+.resilience-scenario h4 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #242520;
+  line-height: 1.35;
+}
+.resilience-solution p {
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #696b61;
+}
+
 /* Responsive adjustments for Case Study */
 @media (max-width: 900px) {
   .architecture-pipeline-grid, .metrics-grid, .project-metadata-grid { grid-template-columns: repeat(2, 1fr); }
-  .problem-solution-grid, .features-grid, .tech-stack-groups { grid-template-columns: 1fr; }
+  .problem-solution-grid, .features-grid, .tech-stack-groups, .principles-grid, .resilience-grid { grid-template-columns: 1fr; }
   .project-header-center { display: none; }
   .project-nav-row { flex-direction: column; gap: 14px; }
   .prev-project-btn, .next-project-btn, .footer-return-btn { width: 100%; justify-content: center; }
@@ -1334,4 +1414,5 @@ html[data-scene="orange"], body[data-scene="orange"], [data-scene="orange"] .sto
 @media (max-width: 600px) {
   .architecture-pipeline-grid, .metrics-grid, .project-metadata-grid { grid-template-columns: 1fr; }
 }
+
 
