@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import gsap from 'gsap';
 import '@fontsource/barlow-condensed/latin-600.css';
 import '@fontsource/dm-sans/latin-400.css';
@@ -206,5 +207,6 @@ export default function App() {
     {modal && <StoryDialog view={modal} onClose={closeModal} onNavigate={navigate} onContact={openContact} reducedMotion={reducedMotion} onToggleMotion={toggleMotion} illustrationMode={illustrationMode} onToggleIllustration={toggleIllustration} webglAvailable={webglAvailable} />}
     {activeProject && <ProjectDetailPage projectId={activeProject} onBack={closeProject} onSelectProject={openProject} />}
     {!started && <LoadingScene progress={progress} ready={ready} reducedMotion={reducedMotion} onComplete={onLoadingComplete} />}
+    <Analytics />
   </div>;
 }
